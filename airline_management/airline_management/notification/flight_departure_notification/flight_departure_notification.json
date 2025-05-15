@@ -1,0 +1,31 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.status == \"Scheduled\"\n",
+ "creation": "2025-04-18 10:55:32.711584",
+ "date_changed": "date_of_departure",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Airplane Flight",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Flight {{ doc.name }} is scheduled to depart tomorrow from {{ doc.source_airport_code }} to {{ doc.destination_airport_code }}.\n",
+ "message_type": "Plain Text",
+ "modified": "2025-04-18 10:55:32.711584",
+ "modified_by": "Administrator",
+ "module": "Airline Management",
+ "name": "Flight Departure Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "condition": "doc.status == \"Scheduled\"",
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Departs in 24 hours!"
+}

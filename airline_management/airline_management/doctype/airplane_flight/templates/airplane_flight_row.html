@@ -1,0 +1,85 @@
+
+<!-- <div>
+	<a href="/{{ doc.route |e }}">{{ (doc.title or doc.name) |e }}</a>
+</div> -->
+<!-- this is a sample default list template -->
+<!-- <div style="margin-bottom: 20px;">
+	<div>
+		<h2><a href="/{{ doc.route |e }}">{{ doc.airplane |e }}</a></h2>
+	</div>
+	<div>
+		{{ doc.source_airport }} &rarr; {{ doc.destination_airport }}<br>
+		{{ doc.source_airport_code }} &rarr; {{ doc.destination_airport_code }}<br>
+		{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ doc.time_of_departure }} | {{ frappe.utils.format_duration(doc.duration) }}<br>
+		<a class="btn btn-primary btn-md" href="{{ doc.route }}">View Flight</a>
+	</div>
+</div> -->
+
+
+<style>
+	.flight-card {
+		background-color: #f9f9f9;
+		border-radius: 12px;
+		padding: 20px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		margin-bottom: 20px;
+	}
+
+	.flight-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+	}
+
+	.flight-card h2 a {
+		color: #1a202c;
+		font-size: 1.5rem;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.flight-card h2 a:hover {
+		color: #2563eb;
+		text-decoration: underline;
+	}
+
+	.flight-card-details {
+		color: #4a5568;
+		font-size: 1rem;
+		line-height: 1.6;
+		margin-top: 10px;
+	}
+
+	.btn.btn-primary.btn-md {
+		background-color: #2563eb;
+		color: white;
+		border: none;
+		padding: 8px 16px;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		transition: background-color 0.2s ease;
+		display: inline-block;
+		margin-top: 10px;
+	}
+
+	.btn.btn-primary.btn-md:hover {
+		background-color: #1d4ed8;
+	}
+
+</style>
+<div>
+	<div class="flight-card">
+		<div>
+			<h1><a href="/{{ doc.route |e }}">{{ doc.airplane |e }}</a></h1>
+		</div>
+		<div class="flight-card-details">
+			{{ doc.source_airport }} &rarr; {{ doc.destination_airport }}<br>
+			{{ doc.source_airport_code }} &rarr; {{ doc.destination_airport_code }}<br>
+			{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ doc.time_of_departure }} | {{ frappe.utils.format_duration(doc.duration) }}<br>
+			<a class="btn btn-primary btn-md" href="{{ doc.route }}">View Flight</a>
+		</div>
+	</div>
+</div>
+
+
